@@ -1,6 +1,7 @@
 package english
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -17,6 +18,7 @@ func TestPlurals(t *testing.T) {
 		{"knife", "knives"},
 		{"valency", "valencies"},
 	} {
+		fmt.Println(pair)
 		p, ok := Pluralise(pair.lemma)
 		req.True(ok)
 		req.Equal(pair.plural, p)
